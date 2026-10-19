@@ -28,15 +28,7 @@ You describe in plain words what Jev should decide. EasyJev turns it into a read
 - Your Claude key goes straight from your browser to Anthropic. It stays in memory unless you choose to remember it on your device.
 - Claude models: Haiku 5.5 (default) or Sonnet 5.5. Generating questions costs a fraction of a cent.
 
-### Run locally
-
-```bash
-npm install
-npm run dev     # http://localhost:3000
-npm test        # test suite
-```
-
-Production builds require `NEXT_PUBLIC_SITE_URL` (see `.env.example`). Technical details: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+Technical details: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ### License
 
@@ -66,15 +58,7 @@ Tu décris en quelques mots ce que Jev doit décider. EasyJev en fait un nœud n
 - Ta clé Claude va directement de ton navigateur à Anthropic. Elle reste en mémoire, sauf si tu choisis de la mémoriser sur ton appareil.
 - Modèles Claude : Haiku 5.5 (par défaut) ou Sonnet 5.5. Une génération coûte une fraction de centime.
 
-### Lancer en local
-
-```bash
-npm install
-npm run dev     # http://localhost:3000
-npm test        # tests
-```
-
-La version de production exige `NEXT_PUBLIC_SITE_URL` (voir `.env.example`). Détails techniques : [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+Détails techniques : [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ### Licence
 
