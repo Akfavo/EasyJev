@@ -32,7 +32,7 @@ Technical details: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ### License
 
-All rights reserved. © 2026 EasyJev Authors. The code is public for reading; reuse requires written permission. See [`LICENSE`](LICENSE).
+© 2026 EasyJev Authors · All rights reserved ([`LICENSE`](LICENSE))
 
 ---
 
@@ -62,4 +62,4 @@ Détails techniques : [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ### Licence
 
-Tous droits réservés. © 2026 EasyJev Authors. Le code est public en lecture ; toute réutilisation demande une autorisation écrite. Voir [`LICENSE`](LICENSE).
+© 2026 EasyJev Authors · Tous droits réservés ([`LICENSE`](LICENSE))
