@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-500: #9D2E7C;
+  --color-brand-600: #9D2E7C;
+  --color-brand-700: #852467;
+  --color-brand-100: #F6E4F0;
+  
+  --color-ink: #181419;
+  --color-ink-page: #3C2C2F;
+  --color-muted: #5B535D;
+  --color-muted-page: #3C2C2F;
+
+  --color-line: #141115;
+  --color-line-subtle: #E4DFE4;
+  --color-control-border: #634450;
+  
+  --color-canvas: #F385A1;
+  --color-canvas-light: #F59BB2;
+  --color-canvas-dark: #E67E99;
+  --color-surface: #FFFFFF;
+  --color-surface-glass: rgba(255, 255, 255, 0.88);
+  --color-surface-2: #FAF8FA;
+  
+  --color-success: #0F5B35;
+  --color-success-bg: #D7F5E5;
+  --color-error: #991B1B;
+  --color-error-bg: #FDE4E4;
+  --color-reset: #902F44;
+  --color-reset-hover: #7A2739;
+  --color-warning-bg: #FEEAA2;
+  --color-warning-text: #3B2900;
+
+  --radius-win: 14px;
+  --radius-card: 14px;
+  --radius-control: 8px;
+  --radius-pill: 999px;
+
+  --font-sans: var(--font-inter-tight), system-ui, -apple-system, sans-serif;
+  --font-pixel: var(--font-silkscreen), monospace;
+  --font-mono: var(--font-jetbrains), monospace;
+}
+
+/* Échelle de texte fluide */
+html {
+  font-size: clamp(1rem, 1rem + (100vw - 90rem) * 0.0036, 1.25rem);
+}
+
+body {
+  background-color: var(--color-canvas);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(30, 15, 25, 0.06) 0%, transparent 50%),
+    radial-gradient(rgba(42, 27, 32, 0.12) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 12px 12px;
+  color: var(--color-ink-page);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Conteneur pleine largeur */
+.page-container {
+  width: 100%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.5rem, 1rem + 2vw, 3.5rem);
+  padding-right: clamp(1.5rem, 1rem + 2vw, 3.5rem);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand-600);
+  outline-offset: 3px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--color-brand-600);
+}
+
+/* Remplacement du verre en mode réduction de transparence */
+@media (prefers-reduced-transparency: reduce) {
+  .os-window-body, .glass-panel, .floating-action-bar, .modal-dialog {
+    background-color: #FFFFFF !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* Repli si backdrop-filter non supporté */
+@supports not (backdrop-filter: blur(1px)) {
+  .os-window-body, .glass-panel, .floating-action-bar, .modal-dialog {
+    background-color: #FFFFFF !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Repères de coupe ⌜ ⌝ ⌞ ⌟ */
+.crop-mark {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--color-ink-page);
+  border-style: solid;
+  pointer-events: none;
+}
+.crop-tl { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+.crop-tr { top: -2px; right: -2px; border-width: 2px 2px 0 0; }
+.crop-bl { bottom: -2px; left: -2px; border-width: 0 0 2px 2px; }
+.crop-br { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+/* Agrandit la démo seulement si la fenêtre est assez grande pour tout afficher */
+@media (min-width: 1024px) and (min-height: 760px) {
+  .demo-zoom {
+    zoom: 1.1;
+  }
+}
+@media (min-width: 1280px) and (min-height: 900px) {
+  .demo-zoom {
+    zoom: 1.2;
+  }
+}

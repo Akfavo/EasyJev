@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+
+# Captures de référence personnelles : elles montrent le navigateur de l'auteur (favoris, noms d'outils)
+design-lab/references/
+
+# Métadonnées d'un outil d'agent, sans intérêt pour le dépôt
+.freebuff/
