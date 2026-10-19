@@ -64,7 +64,7 @@ describe('Configuration vercel.json — Redirections et règle Accept-Language',
         h.key?.toLowerCase() === 'accept-language'
     );
     expect(headerCondition).toBeDefined();
-    expect(headerCondition?.value).toBe('^fr');
+    expect(headerCondition?.value).toBe('fr.*');
   });
 
   it('la valeur de la règle compile comme une RegExp JavaScript sans drapeau', () => {
@@ -88,8 +88,9 @@ describe('Configuration vercel.json — Redirections et règle Accept-Language',
     expect(pattern).toBeDefined();
     expect(pattern).not.toContain('(?i)'); // Aucun drapeau en ligne non garanti
 
-    // Compilation en RegExp sans drapeaux
-    const regex = new RegExp(pattern as string);
+    // Vercel compare la valeur à l'en-tête ENTIER (motif ancré au début et à la fin) :
+    // on reproduit ce comportement, sinon « ^fr » passerait ici mais pas en ligne.
+    const regex = new RegExp(`^(?:${pattern as string})$`);
     expect(regex.flags).toBe('');
 
     // Correspondances requises par la spécification du lot

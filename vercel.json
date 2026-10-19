@@ -53,7 +53,7 @@
         {
           "type": "header",
           "key": "accept-language",
-          "value": "^fr"
+          "value": "fr.*"
         }
       ],
       "destination": "/fr",
